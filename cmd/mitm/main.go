@@ -10,9 +10,19 @@ import (
 	"github.com/joho/godotenv"
 )
 
+var hijack bool
+
 func init() {
 	envPath := flag.String("env", "./.env", "Path for .env file")
+	hijackPtr := flag.Bool("hijack", false, "Hijack messages mode")
 	flag.Parse()
+
+	if hijackPtr == nil {
+		hijack = false
+	} else {
+		hijack = *hijackPtr
+		log.Printf("Mode: %t", hijack)
+	}
 	godotenv.Load(*envPath)
 }
 
@@ -52,6 +62,11 @@ func main() {
 
 		decryptedMessage := caeserCipher.Decrypt(string(msg.Payload()), true)
 		log.Printf("Decoded message: %s", decryptedMessage)
+
+		if hijack {
+			log.Println("Message hijacked with success!")
+			return
+		}
 
 		modifiedMessage := "You have been hacked"
 

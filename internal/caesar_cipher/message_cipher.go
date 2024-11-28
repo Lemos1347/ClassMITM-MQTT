@@ -39,7 +39,7 @@ func (s *CaesarCipher) detectShift(encryptedText string) {
 		}
 	}
 
-	log.Printf("Deslocamento detectado: %d", bestShift)
+	log.Printf("Shift detected: %d", bestShift)
 	s.shift = bestShift
 }
 

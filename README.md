@@ -145,7 +145,7 @@ To run the `publisher`, execute the binary directly:
 
 | Command                                | Description                                     |
 |----------------------------------------|-------------------------------------------------|
-| `go build -o ./<target>`               | Compiles the specified executable.             |
+| `go build -o ./<target> ./cmd/<target>/main.go`| Compiles the specified executable.             |
 | `./mitm`                               | Runs the `mitm` executable. Accept `-hijack` flag.  |
 | `./listener -shift <value>`            | Runs the `listener` with the specified shift value. |
 | `./publisher`                          | Runs the `publisher` executable.               |

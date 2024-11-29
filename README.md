@@ -19,7 +19,7 @@ https://github.com/user-attachments/assets/7865fa88-1a95-4ea7-ba13-0b66cabe5631
    - [golang](https://go.dev/)
 2. **Environment Variables:**
    - All executables depend on a `.env` file for configuration.
-   - Refer to the provided `.env.example` to see which values are required.
+   - Refer to the provided [`.env.example`](./.env.example) to see which values are required.
    - You can use the `-env` flag to specify the path to your `.env` file if it's not in the default location (`./.env`).
 
 3. **Required Flags:**
